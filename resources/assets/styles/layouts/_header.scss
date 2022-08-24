@@ -1,0 +1,16 @@
+
+.banner{
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  @include media-breakpoint-down(md) {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+  a.brand{
+    color: $first;
+    text-decoration: none;
+    &:hover{
+      color: $second;
+    }
+  }
+}

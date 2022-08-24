@@ -1,0 +1,39 @@
+.hero{
+    padding-top: 5rem;
+    @include media-breakpoint-down(md) {
+        padding-top: 1rem;
+      }
+    &_cols{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap:40px;
+        
+        &_left{
+            grid-column: span 1;
+            @include media-breakpoint-down(md) {
+                grid-column: span 2;
+              }
+        }
+        &_right{
+            @include media-breakpoint-down(md) {
+                grid-row-start: 1;
+              }
+          
+        }
+        @include media-breakpoint-down(md) {
+            grid-template-columns: 1fr;
+            row-gap: 1rem;
+          }
+    }
+    p{
+        padding-bottom: 3.125rem;
+        margin-bottom: 0;
+        @include media-breakpoint-down(md) {
+            padding-bottom: 1rem;
+            margin-top: 0;
+          }
+    }
+    h1{
+        margin-bottom: 1rem;
+    }
+}
