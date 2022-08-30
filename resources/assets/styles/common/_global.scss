@@ -35,6 +35,26 @@ body {
         line-height: 4.3rem;
       }
     }
+    h2{
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 3rem;
+      @include media-breakpoint-up(md) {
+        font-size: 2.188rem;
+        font-weight: 500;
+        line-height: 3.125rem;
+      }
+    }
+    h3{
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 2rem;
+      @include media-breakpoint-up(md) {
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 1.875rem;
+      }
+    }
     p{
       font-size: 1rem;
       color: $third;
@@ -68,4 +88,21 @@ body {
       }
     }
   
-    
+    a.btn_outline{
+      background-color: transparent; /* Green */
+      border: 2px solid #00E700;
+      color: #00E700;
+      padding: 13px 61px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      max-width: fit-content;
+      border-radius: 50px;
+  
+      &:hover{
+          background-color: #00E700;
+          color: $first;
+      }
+    }

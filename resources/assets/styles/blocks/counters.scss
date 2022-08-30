@@ -1,0 +1,59 @@
+.counters{
+    margin-top: 100px;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 14px 54px -19px rgba(0,0,0,0.36);
+    -moz-box-shadow: 0px 14px 54px -19px rgba(0,0,0,0.36);
+    box-shadow: 0px 14px 54px -19px rgba(0,0,0,0.36);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    position: relative;
+    grid-auto-rows: 200px;
+    align-items: center;
+    border-radius: 10px;
+
+    @include media-breakpoint-down(md) {
+        grid-template-columns: 1fr;
+      }
+   
+    &_col{
+        text-align: center;
+        height: 70%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+       &:nth-child(3n-1) {
+         border-right:  2px solid #EEEFF2;
+         border-left:  2px solid #EEEFF2;
+        }
+        &_content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h2{
+                margin-bottom: 0;
+                margin-top: 0;
+            }
+        }
+    }
+    &_counter_box{
+        .counter{
+            font-weight: 700;
+            font-size: 25px;
+            &:after{
+                content: "+";
+            }
+        }
+        span{
+            font-size: 20px;
+            color: #4F5665;
+            font-weight: 400;
+            margin-top: 5px;
+            display: block;
+        }
+    }
+    img{
+        margin-right:2rem;
+    }
+}
+

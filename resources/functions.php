@@ -92,4 +92,50 @@ Container::getInstance()
     }, true);
 
 
-    
+    if( function_exists('acf_add_options_page') ) {
+	
+        acf_add_options_page();
+        
+    }
+
+    function coditive_widgets_init(){
+
+        register_sidebar(array(
+            'name' => __('Footer Left', 'coditive'),
+            'id' => 'footer-left',
+            'description' => __('Add widgets to appear in left footer', 'coditive'),
+            'before_widget' => '<div>',
+            'after_widget' => '</div>',
+            'before_title' => '<h2>',
+            'after_title' => '</h2>'
+        ));
+
+        register_sidebar(array(
+            'name' => __('Footer Middle', 'coditive'),
+            'id' => 'footer-middle',
+            'description' => __('Add widgets here to appear in middle footer column', 'coditive'),
+            'before_widget' => '<div>',
+            'after_widget' => '</div>',
+            'before_title' => '<h2>',
+            'after_title' => '</h2>'
+        ));
+
+        register_sidebar(array(
+            'name' => __('Footer Right', 'coditive'),
+            'id' => 'footer_right',
+            'description' => __('Add widgets here to appear in Right footer column', 'coditive'),
+            'before_widget' => '<div>',
+            'after_widget' => '</div>',
+            'before_title' => '<h2>',
+            'after_widget' => '<h2>'
+        ));
+    }
+
+    add_action('widgets_init', 'coditive_widgets_init');
+
+
+    function cc_mime_types($mimes) {
+        $mimes['svg'] = 'image/svg+xml';
+        return $mimes;
+      }
+      add_filter('upload_mimes', 'cc_mime_types');

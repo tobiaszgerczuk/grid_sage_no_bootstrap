@@ -3,7 +3,6 @@
   Description:  Hero
   Category: formatting
   Icon: admin-comments
-  Keywords: testimonial quote
   Mode: preview
   EnqueueStyle: styles/main.css
 
@@ -31,10 +30,3 @@
         </div>
     </div>
 </div>
-
-<style type="text/css">
-  [data-{{$block['id']}}] {
-    background: {{ get_field('background_color') }};
-    color: {{ get_field('text_color') }};
-  }
-</style>
